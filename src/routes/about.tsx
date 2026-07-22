@@ -2,7 +2,9 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
-import about from "@/assets/about.jpg";
+import aboutAsset from "@/assets/gloria-about.png.asset.json";
+
+const about = aboutAsset.url;
 
 export const Route = createFileRoute("/about")({
   head: () => ({
