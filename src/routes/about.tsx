@@ -8,9 +8,9 @@ export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
       { title: "About — Gloria Reina" },
-      { name: "description", content: "Gloria Reina is an editorial photographer based between Madrid and New York, working in portrait, wedding, and travel photography." },
+      { name: "description", content: "Gloria Reina. Estudié Realización de Proyectos Audiovisuales y Espectáculos, y más tarde Comunicación Audiovisual en la Universidad de Sevilla." },
       { property: "og:title", content: "About — Gloria Reina" },
-      { property: "og:description", content: "Gloria Reina is an editorial photographer based between Madrid and New York, working in portrait, wedding, and travel photography." },
+      { property: "og:description", content: "Gloria Reina. Estudié Realización de Proyectos Audiovisuales y Espectáculos, y más tarde Comunicación Audiovisual en la Universidad de Sevilla." },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -50,22 +50,17 @@ function About() {
             <Reveal delay={120} className="md:col-span-6 md:pt-12">
               <p className="text-[11px] uppercase tracking-widest-plus text-muted-foreground">About</p>
               <h1 className="mt-4 font-serif text-4xl md:text-5xl leading-tight">
-                A quiet way of seeing.
+                Una mirada en construcción.
               </h1>
               <div className="mt-8 space-y-5 text-sm md:text-base font-light leading-relaxed text-foreground/80">
                 <p>
-                  Gloria Reina is an editorial and documentary photographer based between Madrid and New York.
-                  Her work is grounded in a slow, observational approach — portraits made with patience, weddings
-                  captured without direction, landscapes met on their own terms.
+                  Estudié Realización de Proyectos Audiovisuales y Espectáculos en el IES Néstor Almendros, y más tarde Comunicación Audiovisual en la Universidad de Sevilla, una formación que fue dando forma a una manera particular de mirar.
                 </p>
                 <p>
-                  Trained in analog black-and-white printing, she carries that discipline into everything she
-                  makes: attention to light, restraint in composition, and a preference for what is real over
-                  what is arranged.
+                  La fotografía y la videografía son el centro de ese lenguaje, completadas por el montaje de vídeo, el diseño y una atención constante a cómo se cuentan las historias en redes sociales.
                 </p>
                 <p>
-                  She has photographed for magazines, brands, and private commissions across Europe and North
-                  America. Selected clients and press below.
+                  Cada proyecto parte de la misma idea: observar antes de intervenir, y dejar que la imagen hable primero.
                 </p>
               </div>
 
