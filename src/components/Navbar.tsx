@@ -66,25 +66,28 @@ export function Navbar({ transparent = false }: { transparent?: boolean }) {
       </div>
 
       {open && (
-        <div className="fixed inset-0 z-[60] bg-background md:hidden">
+        <div className="fixed inset-0 z-[60] flex h-[100dvh] w-screen flex-col bg-background md:hidden">
           <div className="flex items-center justify-between px-6 py-5">
             <span className="font-serif text-xl">Gloria Reina</span>
             <button onClick={() => setOpen(false)} aria-label="Close menu">
               <X className="h-5 w-5" />
             </button>
           </div>
-          <nav className="mt-16 flex flex-col items-center gap-10">
+          <nav className="flex flex-1 flex-col justify-center gap-8 px-8">
             {links.map((l) => (
               <Link
                 key={l.to}
                 to={l.to}
                 onClick={() => setOpen(false)}
-                className="font-serif text-3xl"
+                className="font-serif text-4xl leading-none"
               >
                 {l.label}
               </Link>
             ))}
           </nav>
+          <div className="px-8 pb-10 text-[10px] uppercase tracking-widest-plus text-muted-foreground">
+            Gloria Reina — Photography
+          </div>
         </div>
       )}
     </header>
