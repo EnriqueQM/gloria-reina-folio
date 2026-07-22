@@ -37,8 +37,8 @@ function Contact() {
               <div className="mt-12 space-y-6 text-sm">
                 <div>
                   <p className="text-[10px] uppercase tracking-widest-plus text-muted-foreground">Correo</p>
-                  <a href="mailto:studio@gloriareina.com" className="mt-2 block font-serif text-xl hover:opacity-60 transition">
-                    studio@gloriareina.com
+                  <a href="mailto:gloriareinaypunto@gmail.com" className="mt-2 block font-serif text-xl hover:opacity-60 transition">
+                    gloriareinaypunto@gmail.com
                   </a>
                 </div>
                 <div>
