@@ -39,7 +39,7 @@ function Home() {
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
           <p className="gr-fade text-[11px] uppercase tracking-widest-plus opacity-80" style={{ animationDelay: "200ms" }}>
-            Photographer · Est. 2020
+            Fotógrafa · Est. 2020
           </p>
           <h1 className="gr-fade-up mt-6 font-serif text-5xl md:text-7xl lg:text-8xl leading-none" style={{ animationDelay: "400ms" }}>
             Gloria Reina

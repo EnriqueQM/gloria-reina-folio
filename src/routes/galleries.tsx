@@ -25,10 +25,10 @@ function GalleriesIndex() {
       <main className="pt-32 md:pt-40">
         <div className="mx-auto max-w-[1600px] px-6 md:px-12">
           <Reveal>
-            <p className="text-[11px] uppercase tracking-widest-plus text-muted-foreground">Collections</p>
-            <h1 className="mt-4 font-serif text-4xl md:text-6xl">Galleries</h1>
+            <p className="text-[11px] uppercase tracking-widest-plus text-muted-foreground">Colecciones</p>
+            <h1 className="mt-4 font-serif text-4xl md:text-6xl">Galerías</h1>
             <p className="mt-6 max-w-xl text-sm md:text-base font-light text-muted-foreground">
-              A body of work across commissioned and personal projects. Choose a series to enter.
+              Un conjunto de trabajos entre encargos y proyectos personales. Elige una serie para entrar.
             </p>
           </Reveal>
 
@@ -55,7 +55,7 @@ function GalleriesIndex() {
                     </p>
                     <h2 className="mt-3 font-serif text-3xl md:text-5xl">{c.name}</h2>
                     <p className="mt-4 text-[11px] uppercase tracking-widest-plus opacity-0 group-hover:opacity-90 transition-opacity duration-500">
-                      Enter series
+                      Ver serie
                     </p>
                   </div>
                 </Link>

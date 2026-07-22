@@ -6,9 +6,9 @@ export function Footer() {
       <div className="mx-auto max-w-[1600px] px-6 md:px-12 py-12 flex flex-col md:flex-row items-center justify-between gap-6">
         <p className="font-serif text-lg">Gloria Reina</p>
         <div className="flex gap-8 text-[11px] uppercase tracking-widest-plus text-muted-foreground">
-          <Link to="/galleries" className="hover:text-foreground transition">Galleries</Link>
-          <Link to="/about" className="hover:text-foreground transition">About</Link>
-          <Link to="/contact" className="hover:text-foreground transition">Contact</Link>
+          <Link to="/galleries" className="hover:text-foreground transition">Galerías</Link>
+          <Link to="/about" className="hover:text-foreground transition">Sobre mí</Link>
+          <Link to="/contact" className="hover:text-foreground transition">Contacto</Link>
         </div>
         <p className="text-[11px] uppercase tracking-widest-plus text-muted-foreground">
           © {new Date().getFullYear()}

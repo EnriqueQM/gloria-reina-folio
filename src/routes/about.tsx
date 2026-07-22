@@ -9,9 +9,9 @@ const about = aboutAsset.url;
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Gloria Reina" },
+      { title: "Acerca de mí — Gloria Reina" },
       { name: "description", content: "Gloria Reina. Estudié Realización de Proyectos Audiovisuales y Espectáculos, y más tarde Comunicación Audiovisual en la Universidad de Sevilla." },
-      { property: "og:title", content: "About — Gloria Reina" },
+      { property: "og:title", content: "Acerca de mí — Gloria Reina" },
       { property: "og:description", content: "Gloria Reina. Estudié Realización de Proyectos Audiovisuales y Espectáculos, y más tarde Comunicación Audiovisual en la Universidad de Sevilla." },
       { property: "og:type", content: "profile" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -20,14 +20,7 @@ export const Route = createFileRoute("/about")({
   component: About,
 });
 
-const press = [
-  "Vogue Italia",
-  "The New York Times Magazine",
-  "AnOther",
-  "Kinfolk",
-  "Hermès",
-  "Aesop",
-];
+
 
 function About() {
   return (
@@ -50,7 +43,7 @@ function About() {
             </Reveal>
 
             <Reveal delay={120} className="md:col-span-6 md:pt-12">
-              <p className="text-[11px] uppercase tracking-widest-plus text-muted-foreground">About</p>
+              <p className="text-[11px] uppercase tracking-widest-plus text-muted-foreground">Acerca de mí</p>
               <h1 className="mt-4 font-serif text-4xl md:text-5xl leading-tight">
                 Una mirada en construcción.
               </h1>
@@ -66,16 +59,7 @@ function About() {
                 </p>
               </div>
 
-              <div className="mt-14">
-                <p className="text-[11px] uppercase tracking-widest-plus text-muted-foreground">
-                  Selected clients & press
-                </p>
-                <ul className="mt-6 grid grid-cols-2 gap-x-6 gap-y-3 font-serif text-lg md:text-xl">
-                  {press.map((p) => (
-                    <li key={p}>{p}</li>
-                  ))}
-                </ul>
-              </div>
+
             </Reveal>
           </div>
         </div>

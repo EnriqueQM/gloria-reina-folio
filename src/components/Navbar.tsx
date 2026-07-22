@@ -86,7 +86,7 @@ export function Navbar({ transparent = false }: { transparent?: boolean }) {
             ))}
           </nav>
           <div className="px-8 pb-10 text-[10px] uppercase tracking-widest-plus text-muted-foreground">
-            Gloria Reina — Photography
+            Gloria Reina — Fotografía
           </div>
         </div>
       )}
