@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
 const links = [
-  { to: "/", label: "Home" },
-  { to: "/galleries", label: "Galleries" },
-  { to: "/about", label: "About" },
-  { to: "/contact", label: "Contact" },
+  { to: "/", label: "Inicio" },
+  { to: "/galleries", label: "Galerías" },
+  { to: "/about", label: "Acerca de" },
+  { to: "/contact", label: "Contacto" },
 ] as const;
 
 export function Navbar({ transparent = false }: { transparent?: boolean }) {
@@ -59,7 +59,7 @@ export function Navbar({ transparent = false }: { transparent?: boolean }) {
         <button
           onClick={() => setOpen(true)}
           className={`md:hidden ${solid ? "text-foreground" : "text-white"}`}
-          aria-label="Open menu"
+          aria-label="Abrir menú"
         >
           <Menu className="h-5 w-5" />
         </button>
