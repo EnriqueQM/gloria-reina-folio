@@ -9,13 +9,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Editorial black-and-white photography by Gloria Reina — portraits, weddings, travel, and personal work.",
+          "Photography by Gloria Reina — portraits, weddings, travel, and personal work.",
       },
       { property: "og:title", content: "Gloria Reina — Photographer" },
       {
         property: "og:description",
         content:
-          "Editorial black-and-white photography by Gloria Reina — portraits, weddings, travel, and personal work.",
+          "Photography by Gloria Reina — portraits, weddings, travel, and personal work.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },

@@ -77,6 +77,16 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { title: "Gloria Reina — Photographer" },
+      { property: "og:title", content: "Gloria Reina — Photographer" },
+      { name: "twitter:title", content: "Gloria Reina — Photographer" },
+      { name: "description", content: "Photography by Gloria Reina — portraits, weddings, travel, and personal work." },
+      { property: "og:description", content: "Photography by Gloria Reina — portraits, weddings, travel, and personal work." },
+      { name: "twitter:description", content: "Photography by Gloria Reina — portraits, weddings, travel, and personal work." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/94261010-8bfa-4165-a717-c6db8e324204/id-preview-6010b58f--c079124e-415b-4989-a28c-42a9290f8517.lovable.app-1784731236203.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/94261010-8bfa-4165-a717-c6db8e324204/id-preview-6010b58f--c079124e-415b-4989-a28c-42a9290f8517.lovable.app-1784731236203.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:type", content: "website" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
