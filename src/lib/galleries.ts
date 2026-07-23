@@ -41,9 +41,9 @@ export const categories: Category[] = [
   {
     slug: "retratos",
     name: "Retratos",
-    cover: portrait,
+    cover: rUntitled.url,
     description: "Estudios de luz, gesto y presencia silenciosa.",
-    images: makeImages("Retratos"),
+    images: retratosImages,
   },
   {
     slug: "paisajes",
