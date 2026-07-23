@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { categories } from "@/lib/galleries";
 
-export const Route = createFileRoute("/galleries")({
+export const Route = createFileRoute("/galleries/")({
   head: () => ({
     meta: [
       { title: "Galleries — Gloria Reina" },
