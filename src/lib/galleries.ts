@@ -61,7 +61,7 @@ export const categories: Category[] = [
     name: "Paisajes",
     cover: travel,
     description: "Notas de lugares, clima y caminos largos.",
-    images: makeImages("Paisajes"),
+    images: paisajesImages,
   },
   {
     slug: "cortometrajes",
