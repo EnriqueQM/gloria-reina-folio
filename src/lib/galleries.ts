@@ -14,6 +14,12 @@ import r7 from "@/assets/retratos/r7.png.asset.json";
 import r8 from "@/assets/retratos/r8.png.asset.json";
 import r9 from "@/assets/retratos/r9.png.asset.json";
 import rUntitled from "@/assets/retratos/Untitled.png.asset.json";
+import p1 from "@/assets/paisajes/p1.png.asset.json";
+import p2 from "@/assets/paisajes/p2.png.asset.json";
+import p3 from "@/assets/paisajes/p3.png.asset.json";
+import p4 from "@/assets/paisajes/p4.png.asset.json";
+import p5 from "@/assets/paisajes/p5.png.asset.json";
+import p6 from "@/assets/paisajes/p6.png.asset.json";
 
 export type Category = {
   slug: string;
@@ -37,6 +43,11 @@ const retratosImages = [rUntitled, r2, r3, r4, r5, r6, r7, r8, r9].map((a, i) =>
   alt: `Retratos — imagen ${i + 1}`,
 }));
 
+const paisajesImages = [p1, p2, p3, p4, p5, p6].map((a, i) => ({
+  src: a.url,
+  alt: `Paisajes — imagen ${i + 1}`,
+}));
+
 export const categories: Category[] = [
   {
     slug: "retratos",
@@ -50,7 +61,7 @@ export const categories: Category[] = [
     name: "Paisajes",
     cover: travel,
     description: "Notas de lugares, clima y caminos largos.",
-    images: makeImages("Paisajes"),
+    images: paisajesImages,
   },
   {
     slug: "cortometrajes",
