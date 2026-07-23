@@ -14,6 +14,7 @@ import { Route as GalleriesRouteImport } from './routes/galleries'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as GalleriesIndexRouteImport } from './routes/galleries.index'
 import { Route as GalleriesSlugRouteImport } from './routes/galleries.$slug'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -41,6 +42,11 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GalleriesIndexRoute = GalleriesIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => GalleriesRoute,
+} as any)
 const GalleriesSlugRoute = GalleriesSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -54,14 +60,15 @@ export interface FileRoutesByFullPath {
   '/galleries': typeof GalleriesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/galleries/$slug': typeof GalleriesSlugRoute
+  '/galleries/': typeof GalleriesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
-  '/galleries': typeof GalleriesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/galleries/$slug': typeof GalleriesSlugRoute
+  '/galleries': typeof GalleriesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +78,7 @@ export interface FileRoutesById {
   '/galleries': typeof GalleriesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/galleries/$slug': typeof GalleriesSlugRoute
+  '/galleries/': typeof GalleriesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,14 +89,15 @@ export interface FileRouteTypes {
     | '/galleries'
     | '/sitemap.xml'
     | '/galleries/$slug'
+    | '/galleries/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/contact'
-    | '/galleries'
     | '/sitemap.xml'
     | '/galleries/$slug'
+    | '/galleries'
   id:
     | '__root__'
     | '/'
@@ -97,6 +106,7 @@ export interface FileRouteTypes {
     | '/galleries'
     | '/sitemap.xml'
     | '/galleries/$slug'
+    | '/galleries/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -144,6 +154,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/galleries/': {
+      id: '/galleries/'
+      path: '/'
+      fullPath: '/galleries/'
+      preLoaderRoute: typeof GalleriesIndexRouteImport
+      parentRoute: typeof GalleriesRoute
+    }
     '/galleries/$slug': {
       id: '/galleries/$slug'
       path: '/$slug'
@@ -156,10 +173,12 @@ declare module '@tanstack/react-router' {
 
 interface GalleriesRouteChildren {
   GalleriesSlugRoute: typeof GalleriesSlugRoute
+  GalleriesIndexRoute: typeof GalleriesIndexRoute
 }
 
 const GalleriesRouteChildren: GalleriesRouteChildren = {
   GalleriesSlugRoute: GalleriesSlugRoute,
+  GalleriesIndexRoute: GalleriesIndexRoute,
 }
 
 const GalleriesRouteWithChildren = GalleriesRoute._addFileChildren(
