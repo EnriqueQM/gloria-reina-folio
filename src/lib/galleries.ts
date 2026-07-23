@@ -43,6 +43,11 @@ const retratosImages = [rUntitled, r2, r3, r4, r5, r6, r7, r8, r9].map((a, i) =>
   alt: `Retratos — imagen ${i + 1}`,
 }));
 
+const paisajesImages = [p1, p2, p3, p4, p5, p6].map((a, i) => ({
+  src: a.url,
+  alt: `Paisajes — imagen ${i + 1}`,
+}));
+
 export const categories: Category[] = [
   {
     slug: "retratos",
