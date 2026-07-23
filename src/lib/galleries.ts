@@ -5,6 +5,15 @@ import travel from "@/assets/cat-travel.jpg";
 import bw from "@/assets/cat-bw.jpg";
 import hero from "@/assets/hero.jpg";
 import about from "@/assets/about.jpg";
+import r2 from "@/assets/retratos/r2.png.asset.json";
+import r3 from "@/assets/retratos/r3.png.asset.json";
+import r4 from "@/assets/retratos/r4.png.asset.json";
+import r5 from "@/assets/retratos/r5.png.asset.json";
+import r6 from "@/assets/retratos/r6.png.asset.json";
+import r7 from "@/assets/retratos/r7.png.asset.json";
+import r8 from "@/assets/retratos/r8.png.asset.json";
+import r9 from "@/assets/retratos/r9.png.asset.json";
+import rUntitled from "@/assets/retratos/Untitled.png.asset.json";
 
 export type Category = {
   slug: string;
@@ -23,13 +32,18 @@ const makeImages = (name: string, count = 9) =>
     alt: `${name} — image ${i + 1}`,
   }));
 
+const retratosImages = [rUntitled, r2, r3, r4, r5, r6, r7, r8, r9].map((a, i) => ({
+  src: a.url,
+  alt: `Retratos — imagen ${i + 1}`,
+}));
+
 export const categories: Category[] = [
   {
     slug: "retratos",
     name: "Retratos",
-    cover: portrait,
+    cover: rUntitled.url,
     description: "Estudios de luz, gesto y presencia silenciosa.",
-    images: makeImages("Retratos"),
+    images: retratosImages,
   },
   {
     slug: "paisajes",
