@@ -15,7 +15,9 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GalleriesIndexRouteImport } from './routes/galleries.index'
-import { Route as GalleriesSlugRouteImport } from './routes/galleries.$slug'
+import { Route as GalleriesGroupRouteImport } from './routes/galleries.$group'
+import { Route as GalleriesGroupIndexRouteImport } from './routes/galleries.$group.index'
+import { Route as GalleriesGroupSlugRouteImport } from './routes/galleries.$group.$slug'
 
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
@@ -47,10 +49,20 @@ const GalleriesIndexRoute = GalleriesIndexRouteImport.update({
   path: '/',
   getParentRoute: () => GalleriesRoute,
 } as any)
-const GalleriesSlugRoute = GalleriesSlugRouteImport.update({
+const GalleriesGroupRoute = GalleriesGroupRouteImport.update({
+  id: '/$group',
+  path: '/$group',
+  getParentRoute: () => GalleriesRoute,
+} as any)
+const GalleriesGroupIndexRoute = GalleriesGroupIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => GalleriesGroupRoute,
+} as any)
+const GalleriesGroupSlugRoute = GalleriesGroupSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
-  getParentRoute: () => GalleriesRoute,
+  getParentRoute: () => GalleriesGroupRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -59,16 +71,19 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/galleries': typeof GalleriesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/galleries/$slug': typeof GalleriesSlugRoute
+  '/galleries/$group': typeof GalleriesGroupRouteWithChildren
   '/galleries/': typeof GalleriesIndexRoute
+  '/galleries/$group/$slug': typeof GalleriesGroupSlugRoute
+  '/galleries/$group/': typeof GalleriesGroupIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/contact': typeof ContactRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/galleries/$slug': typeof GalleriesSlugRoute
   '/galleries': typeof GalleriesIndexRoute
+  '/galleries/$group/$slug': typeof GalleriesGroupSlugRoute
+  '/galleries/$group': typeof GalleriesGroupIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -77,8 +92,10 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/galleries': typeof GalleriesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
-  '/galleries/$slug': typeof GalleriesSlugRoute
+  '/galleries/$group': typeof GalleriesGroupRouteWithChildren
   '/galleries/': typeof GalleriesIndexRoute
+  '/galleries/$group/$slug': typeof GalleriesGroupSlugRoute
+  '/galleries/$group/': typeof GalleriesGroupIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -88,16 +105,19 @@ export interface FileRouteTypes {
     | '/contact'
     | '/galleries'
     | '/sitemap.xml'
-    | '/galleries/$slug'
+    | '/galleries/$group'
     | '/galleries/'
+    | '/galleries/$group/$slug'
+    | '/galleries/$group/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/contact'
     | '/sitemap.xml'
-    | '/galleries/$slug'
     | '/galleries'
+    | '/galleries/$group/$slug'
+    | '/galleries/$group'
   id:
     | '__root__'
     | '/'
@@ -105,8 +125,10 @@ export interface FileRouteTypes {
     | '/contact'
     | '/galleries'
     | '/sitemap.xml'
-    | '/galleries/$slug'
+    | '/galleries/$group'
     | '/galleries/'
+    | '/galleries/$group/$slug'
+    | '/galleries/$group/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -161,23 +183,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GalleriesIndexRouteImport
       parentRoute: typeof GalleriesRoute
     }
-    '/galleries/$slug': {
-      id: '/galleries/$slug'
-      path: '/$slug'
-      fullPath: '/galleries/$slug'
-      preLoaderRoute: typeof GalleriesSlugRouteImport
+    '/galleries/$group': {
+      id: '/galleries/$group'
+      path: '/$group'
+      fullPath: '/galleries/$group'
+      preLoaderRoute: typeof GalleriesGroupRouteImport
       parentRoute: typeof GalleriesRoute
+    }
+    '/galleries/$group/': {
+      id: '/galleries/$group/'
+      path: '/'
+      fullPath: '/galleries/$group/'
+      preLoaderRoute: typeof GalleriesGroupIndexRouteImport
+      parentRoute: typeof GalleriesGroupRoute
+    }
+    '/galleries/$group/$slug': {
+      id: '/galleries/$group/$slug'
+      path: '/$slug'
+      fullPath: '/galleries/$group/$slug'
+      preLoaderRoute: typeof GalleriesGroupSlugRouteImport
+      parentRoute: typeof GalleriesGroupRoute
     }
   }
 }
 
+interface GalleriesGroupRouteChildren {
+  GalleriesGroupSlugRoute: typeof GalleriesGroupSlugRoute
+  GalleriesGroupIndexRoute: typeof GalleriesGroupIndexRoute
+}
+
+const GalleriesGroupRouteChildren: GalleriesGroupRouteChildren = {
+  GalleriesGroupSlugRoute: GalleriesGroupSlugRoute,
+  GalleriesGroupIndexRoute: GalleriesGroupIndexRoute,
+}
+
+const GalleriesGroupRouteWithChildren = GalleriesGroupRoute._addFileChildren(
+  GalleriesGroupRouteChildren,
+)
+
 interface GalleriesRouteChildren {
-  GalleriesSlugRoute: typeof GalleriesSlugRoute
+  GalleriesGroupRoute: typeof GalleriesGroupRouteWithChildren
   GalleriesIndexRoute: typeof GalleriesIndexRoute
 }
 
 const GalleriesRouteChildren: GalleriesRouteChildren = {
-  GalleriesSlugRoute: GalleriesSlugRoute,
+  GalleriesGroupRoute: GalleriesGroupRouteWithChildren,
   GalleriesIndexRoute: GalleriesIndexRoute,
 }
 
@@ -195,3 +245,13 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

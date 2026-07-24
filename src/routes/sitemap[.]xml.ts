@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
-import { categories } from "@/lib/galleries";
+import { groups, getGroupCategories, isStandaloneGroup } from "@/lib/galleries";
 
 const BASE_URL = "";
 
@@ -13,11 +13,22 @@ export const Route = createFileRoute("/sitemap.xml")({
           { path: "/galleries", priority: "0.9", changefreq: "weekly" },
           { path: "/about", priority: "0.7", changefreq: "monthly" },
           { path: "/contact", priority: "0.7", changefreq: "monthly" },
-          ...categories.map((c) => ({
-            path: `/galleries/${c.slug}`,
-            priority: "0.8",
-            changefreq: "monthly" as const,
-          })),
+          ...groups.flatMap((g) => {
+            const groupEntry = {
+              path: `/galleries/${g.slug}`,
+              priority: "0.8",
+              changefreq: "monthly" as const,
+            };
+            if (isStandaloneGroup(g)) return [groupEntry];
+            return [
+              groupEntry,
+              ...getGroupCategories(g).map((c) => ({
+                path: `/galleries/${g.slug}/${c.slug}`,
+                priority: "0.7",
+                changefreq: "monthly" as const,
+              })),
+            ];
+          }),
         ];
 
         const urls = entries.map(

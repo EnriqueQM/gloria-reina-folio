@@ -65,16 +65,9 @@ export const categories: Category[] = [
   {
     slug: "paisajes",
     name: "Paisajes",
-    cover: travel,
+    cover: p1.url,
     description: "Notas de lugares, clima y caminos largos.",
     images: paisajesImages,
-  },
-  {
-    slug: "cortometrajes",
-    name: "Cortometrajes",
-    cover: editorial,
-    description: "Narrativas breves contadas en movimiento.",
-    images: makeImages("Cortometrajes"),
   },
   {
     slug: "reportaje",
@@ -82,6 +75,13 @@ export const categories: Category[] = [
     cover: weddings,
     description: "Momentos sin dirección, tal como suceden.",
     images: makeImages("Reportaje"),
+  },
+  {
+    slug: "cortometrajes",
+    name: "Cortometrajes",
+    cover: editorial,
+    description: "Narrativas breves contadas en movimiento.",
+    images: makeImages("Cortometrajes"),
   },
   {
     slug: "documentales",
@@ -99,5 +99,48 @@ export const categories: Category[] = [
   },
 ];
 
-export const getCategory = (slug: string) =>
-  categories.find((c) => c.slug === slug);
+export const getCategory = (slug: string) => categories.find((c) => c.slug === slug);
+
+// --- Groups: the 3 main sections shown on /galleries ---
+// Each group bundles one or more of the categories above.
+// A group with exactly one category (e.g. "trabajo-personal") is
+// treated as standalone: visiting the group goes straight to the
+// gallery instead of showing a subcategory picker first.
+export type Group = {
+  slug: string;
+  name: string;
+  description: string;
+  categorySlugs: string[];
+};
+
+export const groups: Group[] = [
+  {
+    slug: "fotografia",
+    name: "Fotografía",
+    description: "Retratos, paisajes y reportaje.",
+    categorySlugs: ["retratos", "paisajes", "reportaje"],
+  },
+  {
+    slug: "video",
+    name: "Video",
+    description: "Cortometrajes y documentales.",
+    categorySlugs: ["cortometrajes", "documentales"],
+  },
+  {
+    slug: "trabajo-personal",
+    name: "Trabajo Personal",
+    description: "Proyectos propios, sin encargo ni cliente.",
+    categorySlugs: ["trabajo-personal"],
+  },
+];
+
+export const getGroup = (slug: string) => groups.find((g) => g.slug === slug);
+
+export const getGroupCategories = (group: Group) =>
+  group.categorySlugs.map((slug) => getCategory(slug)).filter((c): c is Category => Boolean(c));
+
+// Cover image shown for the group tile on /galleries — uses the
+// first category's cover as a stand-in.
+export const getGroupCover = (group: Group) => getGroupCategories(group)[0]?.cover ?? about;
+
+export const isStandaloneGroup = (group: Group) => group.categorySlugs.length === 1;
