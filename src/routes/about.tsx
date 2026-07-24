@@ -37,7 +37,7 @@ function About() {
                   width={1200}
                   height={1500}
                   loading="lazy"
-                  className="h-full w-full object-cover grayscale"
+                  className="h-full w-full object-cover"
                 />
               </div>
             </Reveal>

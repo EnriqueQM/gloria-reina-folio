@@ -77,7 +77,7 @@ function GroupIndex() {
                         src={c.cover}
                         alt={c.name}
                         loading="lazy"
-                        className="h-full w-full object-cover grayscale transition-transform duration-[1200ms] ease-out group-hover:scale-105"
+                        className="h-full w-full object-cover transition-transform duration-[1200ms] ease-out group-hover:scale-105"
                       />
                     </div>
                     <div className="absolute inset-0 bg-black/10 group-hover:bg-black/30 transition-colors duration-500" />

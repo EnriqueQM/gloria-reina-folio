@@ -34,7 +34,7 @@ function Home() {
           alt="Woman in flowing dress under dramatic light"
           width={1920}
           height={1280}
-          className="absolute inset-0 h-full w-full object-cover grayscale"
+          className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30" />
         <div className="relative z-10 flex h-full flex-col items-center justify-center px-6 text-center text-white">
