@@ -48,7 +48,7 @@ function Contact() {
                 <div>
                   <p className="text-[10px] uppercase tracking-widest-plus text-muted-foreground">Redes</p>
                   <div className="mt-2 flex gap-6 text-[11px] uppercase tracking-widest-plus">
-                    <a href="https://www.instagram.com/glxriareina/" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition border-b border-foreground pb-0.5">Instagram</a>
+                    <a href="https://www.instagram.com/glxriareinawrk/" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition border-b border-foreground pb-0.5">Instagram</a>
                     <a href="https://www.linkedin.com/in/gloria-reina-mart%C3%ADn-6212b826b/" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition border-b border-foreground pb-0.5">LinkedIn</a>
                   </div>
                 </div>
