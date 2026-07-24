@@ -70,13 +70,6 @@ export const categories: Category[] = [
     images: paisajesImages,
   },
   {
-    slug: "reportaje",
-    name: "Reportaje",
-    cover: weddings,
-    description: "Momentos sin dirección, tal como suceden.",
-    images: makeImages("Reportaje"),
-  },
-  {
     slug: "cortometrajes",
     name: "Cortometrajes",
     cover: editorial,
@@ -117,8 +110,8 @@ export const groups: Group[] = [
   {
     slug: "fotografia",
     name: "Fotografía",
-    description: "Retratos, paisajes y reportaje.",
-    categorySlugs: ["retratos", "paisajes", "reportaje"],
+    description: "Retratos y paisajes.",
+    categorySlugs: ["retratos", "paisajes"],
   },
   {
     slug: "video",

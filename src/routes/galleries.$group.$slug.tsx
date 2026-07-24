@@ -9,8 +9,6 @@ export const Route = createFileRoute("/galleries/$group/$slug")({
   loader: ({ params }) => {
     const group = getGroup(params.group);
     const category = getCategory(params.slug);
-    // 404 if the group doesn't exist, the category doesn't exist,
-    // or the category doesn't actually belong to this group.
     if (!group || !category || !group.categorySlugs.includes(category.slug)) {
       throw notFound();
     }
