@@ -57,7 +57,7 @@ export function Lightbox({
       <img
         src={current.src}
         alt={current.alt}
-        className="max-h-[88vh] max-w-[92vw] object-contain grayscale"
+        className="max-h-[88vh] max-w-[92vw] object-contain"
       />
       <div className="absolute bottom-6 left-0 right-0 text-center text-[11px] uppercase tracking-widest-plus text-white/60">
         {index + 1} / {images.length}

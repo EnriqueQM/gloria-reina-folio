@@ -19,7 +19,7 @@ export function Gallery({ images }: { images: GalleryImage[] }) {
               src={img.src}
               alt={img.alt}
               loading="lazy"
-              className="w-full h-auto grayscale transition-transform duration-700 ease-out group-hover:scale-[1.03]"
+              className="w-full h-auto transition-transform duration-700 ease-out group-hover:scale-[1.03]"
             />
           </button>
         ))}
