@@ -42,15 +42,14 @@ function Contact() {
                   </a>
                 </div>
                 <div>
-                  <p className="text-[10px] uppercase tracking-widest-plus text-muted-foreground">Studio</p>
-                  <p className="mt-2 font-light">Madrid · New York</p>
+                  <p className="text-[10px] uppercase tracking-widest-plus text-muted-foreground">Teléfono</p>
+                  <p className="mt-2 font-light">+34 652 78 55 96</p>
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-widest-plus text-muted-foreground">Redes</p>
                   <div className="mt-2 flex gap-6 text-[11px] uppercase tracking-widest-plus">
-                    <a href="#" className="hover:opacity-60 transition border-b border-foreground pb-0.5">Instagram</a>
-                    <a href="#" className="hover:opacity-60 transition border-b border-foreground pb-0.5">Are.na</a>
-                    <a href="#" className="hover:opacity-60 transition border-b border-foreground pb-0.5">Behance</a>
+                    <a href="https://www.instagram.com/glxriareina/" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition border-b border-foreground pb-0.5">Instagram</a>
+                    <a href="https://www.linkedin.com/in/gloria-reina-mart%C3%ADn-6212b826b/" target="_blank" rel="noopener noreferrer" className="hover:opacity-60 transition border-b border-foreground pb-0.5">LinkedIn</a>
                   </div>
                 </div>
               </div>
