@@ -20,6 +20,12 @@ import p3 from "@/assets/paisajes/p3.png.asset.json";
 import p4 from "@/assets/paisajes/p4.png.asset.json";
 import p5 from "@/assets/paisajes/p5.png.asset.json";
 import p6 from "@/assets/paisajes/p6.png.asset.json";
+import p7 from "@/assets/paisajes/p7.png.asset.json";
+import p8 from "@/assets/paisajes/p8.png.asset.json";
+import p9 from "@/assets/paisajes/p9.png.asset.json";
+import p10 from "@/assets/paisajes/p10.png.asset.json";
+import p11 from "@/assets/paisajes/p11.png.asset.json";
+import p12 from "@/assets/paisajes/p12.png.asset.json";
 
 export type Category = {
   slug: string;
@@ -43,7 +49,7 @@ const retratosImages = [rUntitled, r2, r3, r4, r5, r6, r7, r8, r9].map((a, i) =>
   alt: `Retratos — imagen ${i + 1}`,
 }));
 
-const paisajesImages = [p1, p2, p3, p4, p5, p6].map((a, i) => ({
+const paisajesImages = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10, p11, p12].map((a, i) => ({
   src: a.url,
   alt: `Paisajes — imagen ${i + 1}`,
 }));
