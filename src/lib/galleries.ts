@@ -117,7 +117,7 @@ export const groups: Group[] = [
     slug: "video",
     name: "Video",
     description: "Cortometrajes y otros.",
-    categorySlugs: ["cortometrajes", "otros"],
+    categorySlugs: ["cortometrajes", "documentales"],
   },
   {
     slug: "trabajo-personal",
