@@ -38,8 +38,7 @@ function GalleriesIndex() {
             </p>
             <h1 className="mt-4 font-serif text-4xl md:text-6xl">Galerías</h1>
             <p className="mt-6 max-w-xl text-sm md:text-base font-light text-muted-foreground">
-              Un conjunto de trabajos entre encargos y proyectos personales. Elige una serie para
-              entrar.
+              Todos mis proyectos. Elige una serie para ver.
             </p>
           </Reveal>
 

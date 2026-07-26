@@ -110,6 +110,7 @@ import g18 from "@/assets/gente/g18.jpg";
 import g19 from "@/assets/gente/g19.jpg";
 import corto from "@/assets/videos/cortometrajecover.jpg";
 import otros from "@/assets/videos/otroscover.jpg";
+import tp4 from "@/assets/trabajospersonales/tr4.jpg";
 
 export type Category = {
   slug: string;
@@ -153,7 +154,7 @@ export const categories: Category[] = [
   {
     slug: "retratos",
     name: "Retratos",
-    cover: r34,
+    cover: r35,
     description: "---",
     images: retratosImages,
   },
@@ -188,7 +189,7 @@ export const categories: Category[] = [
   {
     slug: "trabajo-personal",
     name: "Trabajo Personal",
-    cover: about,
+    cover: tp4,
     description: "---",
     images: makeImages("Trabajo Personal"),
   },
@@ -224,7 +225,7 @@ export const groups: Group[] = [
   {
     slug: "trabajo-personal",
     name: "Trabajo Personal",
-    description: "Proyectos propios, sin encargo ni cliente.",
+    description: "Proyectos propios más creativos.",
     categorySlugs: ["trabajo-personal"],
   },
 ];

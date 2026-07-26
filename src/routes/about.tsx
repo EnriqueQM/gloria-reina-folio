@@ -45,17 +45,14 @@ function About() {
             <Reveal delay={120} className="md:col-span-6 md:pt-12">
               <p className="text-[11px] uppercase tracking-widest-plus text-muted-foreground">Acerca de mí</p>
               <h1 className="mt-4 font-serif text-4xl md:text-5xl leading-tight">
-                Una mirada en construcción.
+                Capturando la vida.
               </h1>
               <div className="mt-8 space-y-5 text-sm md:text-base font-light leading-relaxed text-foreground/80">
                 <p>
-                  Estudié Realización de Proyectos Audiovisuales y Espectáculos en el IES Néstor Almendros, y más tarde Comunicación Audiovisual en la Universidad de Sevilla, una formación que fue dando forma a una manera particular de mirar.
+                  Estudié Realización de Proyectos Audiovisuales y Espectáculos en el IES Néstor Almendros y, más tarde, Comunicación Audiovisual en la Universidad de Sevilla. Durante ese recorrido descubrí que lo que más me interesaba era capturar la vida a través de la imagen.
                 </p>
                 <p>
-                  La fotografía y la videografía son el centro de ese lenguaje, completadas por el montaje de vídeo, el diseño y una atención constante a cómo se cuentan las historias en redes sociales.
-                </p>
-                <p>
-                  Cada proyecto parte de la misma idea: observar antes de intervenir, y dejar que la imagen hable primero.
+                  Trabajo principalmente con fotografía y vídeo, aunque también disfruto del montaje, el diseño y la creación de contenido para redes sociales. Me gusta cuidar tanto la parte técnica como la creativa de cada proyecto.
                 </p>
               </div>
 

@@ -5,6 +5,7 @@ export function LinkedGallery({ images }: { images: LinkedImage[] }) {
     <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 md:gap-6 [column-fill:_balance]">
       {images.map((img, i) => (
         
+            <a
           key={i}
           href={img.href}
           target="_blank"
