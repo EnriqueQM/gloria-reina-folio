@@ -3,7 +3,9 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { Gallery } from "@/components/Gallery";
+import { VideoShowcase } from "@/components/VideoShowcase";
 import { getGroup, getGroupCategories, getCategory } from "@/lib/galleries";
+import { getVideosForCategory } from "@/lib/videos";
 
 export const Route = createFileRoute("/galleries/$group/$slug")({
   loader: ({ params }) => {
@@ -63,12 +65,20 @@ function GalleryPage() {
 
           <div className="mt-16 md:mt-20">
             <Reveal>
-              <Gallery images={category.images} />
+              {group.slug === "video" ? (
+                <VideoShowcase videos={getVideosForCategory(category.slug)} />
+              ) : (
+                <Gallery images={category.images} />
+              )}
             </Reveal>
           </div>
 
           <div className="mt-24 flex items-center justify-between border-t border-border/60 pt-8 text-[11px] uppercase tracking-widest-plus text-muted-foreground">
-            <span>{category.images.length} works</span>
+            <span>
+              {group.slug === "video"
+                ? `${getVideosForCategory(category.slug).length} videos`
+                : `${category.images.length} works`}
+            </span>
             <div className="flex gap-6">
               {siblings.slice(0, 2).map((c) => (
                 <Link
