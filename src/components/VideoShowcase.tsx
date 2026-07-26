@@ -19,7 +19,7 @@ export function VideoShowcase({ videos }: { videos: VideoEntry[] }) {
               className="group relative block overflow-hidden rounded-md mx-auto md:mx-0 w-full max-w-[320px]"
               aria-label={`Ver ${v.title}`}
             >
-              <div className="aspect-[9/16] overflow-hidden bg-muted">
+              <div className="aspect-[4/5] overflow-hidden bg-muted">
                 <img
                   src={v.coverImage}
                   alt={v.title}

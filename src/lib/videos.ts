@@ -52,7 +52,7 @@ export const videosByCategory: Record<string, VideoEntry[]> = {
     },
     {
       title: "Videoensayo \"Películas Slasher de Terror: La desigualdad de género a la hora de morir y cómo cala en el espectador\"",
-      description: "Descripción de ejemplo para el segundo documental.",
+      description: "Proyecto universitario. Participación en el montaje completo del vídeo.",
       coverImage: ensayo,
       videoUrl: "https://www.youtube.com/watch?v=W5D6kv542iM",
     },
