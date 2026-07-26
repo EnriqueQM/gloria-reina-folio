@@ -78,10 +78,10 @@ export const categories: Category[] = [
   },
   {
     slug: "documentales",
-    name: "Documentales",
+    name: "Otros",
     cover: bw,
     description: "Un archivo personal en sombra y luz.",
-    images: makeImages("Documentales"),
+    images: makeImages("documentales"),
   },
   {
     slug: "trabajo-personal",
@@ -116,8 +116,8 @@ export const groups: Group[] = [
   {
     slug: "video",
     name: "Video",
-    description: "Cortometrajes y documentales.",
-    categorySlugs: ["cortometrajes", "documentales"],
+    description: "Cortometrajes y otros.",
+    categorySlugs: ["cortometrajes", "otros"],
   },
   {
     slug: "trabajo-personal",

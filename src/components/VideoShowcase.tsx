@@ -16,10 +16,10 @@ export function VideoShowcase({ videos }: { videos: VideoEntry[] }) {
               href={v.videoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="group relative block overflow-hidden rounded-md"
+              className="group relative block overflow-hidden rounded-md mx-auto md:mx-0 w-full max-w-[320px]"
               aria-label={`Ver ${v.title}`}
             >
-              <div className="aspect-[4/3] overflow-hidden bg-muted">
+              <div className="aspect-[9/16] overflow-hidden bg-muted">
                 <img
                   src={v.coverImage}
                   alt={v.title}
