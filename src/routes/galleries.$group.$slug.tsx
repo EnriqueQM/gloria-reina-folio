@@ -3,7 +3,9 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { Gallery } from "@/components/Gallery";
+import { VideoShowcase } from "@/components/VideoShowcase";
 import { getGroup, getGroupCategories, getCategory } from "@/lib/galleries";
+import { getVideosForCategory } from "@/lib/videos";
 
 export const Route = createFileRoute("/galleries/$group/$slug")({
   loader: ({ params }) => {
