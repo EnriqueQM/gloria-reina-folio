@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar";
-import hero from "@/assets/hero.jpg";
+import hero from "@/assets/hero-sky.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
