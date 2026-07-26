@@ -1,5 +1,4 @@
 import about from "@/assets/about.jpg";
-import hero from "@/assets/hero.jpg";
 import portrait from "@/assets/cat-portrait.jpg";
 import r34 from "@/assets/retratos/r34.jpg";
 import tp from "@/assets/trabajospersonales/tr1.jpg";

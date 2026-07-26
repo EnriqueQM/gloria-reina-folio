@@ -3,7 +3,6 @@ import weddings from "@/assets/cat-weddings.jpg";
 import editorial from "@/assets/cat-editorial.jpg";
 import travel from "@/assets/cat-travel.jpg";
 import bw from "@/assets/cat-bw.jpg";
-import hero from "@/assets/hero.jpg";
 import about from "@/assets/about.jpg";
 import r1 from "@/assets/retratos/r1.jpg";
 import r2 from "@/assets/retratos/r2.jpg";
@@ -121,7 +120,7 @@ export type Category = {
 };
 
 // Placeholder image pool — user will swap for their own work later.
-const pool = [portrait, weddings, editorial, travel, bw, hero, about];
+const pool = [portrait, weddings, editorial, travel, bw, about];
 
 const makeImages = (name: string, count = 9) =>
   Array.from({ length: count }).map((_, i) => ({
