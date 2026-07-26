@@ -63,29 +63,22 @@ function GalleryPage() {
             </p>
           </Reveal>
 
-          {(() => {
-            const videos = getVideosForCategory(category.slug);
-            const isVideoCategory = group.slug === "video" || videos.length > 0;
-            return (
-              <>
-                <div className="mt-16 md:mt-20">
-                  <Reveal>
-                    {isVideoCategory ? (
-                      <VideoShowcase videos={videos} />
-                    ) : (
-                      <Gallery images={category.images} />
-                    )}
-                  </Reveal>
-                </div>
+          <div className="mt-16 md:mt-20">
+            <Reveal>
+              {group.slug === "video" ? (
+                <VideoShowcase videos={getVideosForCategory(category.slug)} />
+              ) : (
+                <Gallery images={category.images} />
+              )}
+            </Reveal>
+          </div>
 
-                <div className="mt-24 flex items-center justify-between border-t border-border/60 pt-8 text-[11px] uppercase tracking-widest-plus text-muted-foreground">
-                  <span>
-                    {isVideoCategory
-                      ? `${videos.length} videos`
-                      : `${category.images.length} works`}
-                  </span></>
-            );
-          })()}
+          <div className="mt-24 flex items-center justify-between border-t border-border/60 pt-8 text-[11px] uppercase tracking-widest-plus text-muted-foreground">
+            <span>
+              {group.slug === "video"
+                ? `${getVideosForCategory(category.slug).length} videos`
+                : `${category.images.length} works`}
+            </span>
             <div className="flex gap-6">
               {siblings.slice(0, 2).map((c) => (
                 <Link
