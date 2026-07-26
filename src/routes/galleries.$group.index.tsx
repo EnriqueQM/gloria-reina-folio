@@ -4,6 +4,8 @@ import { Footer } from "@/components/Footer";
 import { Reveal } from "@/components/Reveal";
 import { Gallery } from "@/components/Gallery";
 import { getGroup, getGroupCategories, isStandaloneGroup, groups } from "@/lib/galleries";
+import { LinkedGallery } from "@/components/LinkedGallery";
+import { personalLinks } from "@/lib/personalLinks";
 
 export const Route = createFileRoute("/galleries/$group/")({
   loader: ({ params }) => {
@@ -60,7 +62,11 @@ function GroupIndex() {
           {standalone ? (
             <div className="mt-16 md:mt-20">
               <Reveal>
-                <Gallery images={cats[0]?.images ?? []} />
+                {group.slug === "trabajo-personal" ? (
+                  <LinkedGallery images={personalLinks} />
+                ) : (
+                  <Gallery images={cats[0]?.images ?? []} />
+                )}
               </Reveal>
             </div>
           ) : (
@@ -98,7 +104,9 @@ function GroupIndex() {
 
           <div className="mt-24 flex items-center justify-between border-t border-border/60 pt-8 text-[11px] uppercase tracking-widest-plus text-muted-foreground">
             <span>
-              {standalone ? `${cats[0]?.images.length ?? 0} works` : `${cats.length} series`}
+              {standalone
+                ? `${(group.slug === "trabajo-personal" ? personalLinks.length : (cats[0]?.images.length ?? 0))} works`
+                : `${cats.length} series`}
             </span>
             <div className="flex gap-6">
               {groups
