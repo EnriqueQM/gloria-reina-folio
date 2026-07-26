@@ -30,10 +30,10 @@ function Home() {
       <Navbar transparent />
       <section className="relative h-screen w-full overflow-hidden">
         <img
-          src={hero}
-          alt="Woman in flowing dress under dramatic light"
+          src={hero.url}
+          alt="Soft pastel clouds at sunrise"
           width={1920}
-          height={1280}
+          height={1080}
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-black/30" />
