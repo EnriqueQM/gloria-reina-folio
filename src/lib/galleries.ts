@@ -26,6 +26,8 @@ import p9 from "@/assets/paisajes/p9.png.asset.json";
 import p10 from "@/assets/paisajes/p10.png.asset.json";
 import p11 from "@/assets/paisajes/p11.png.asset.json";
 import p12 from "@/assets/paisajes/p12.png.asset.json";
+import corto from "@/assets/videos/cortometrajecover.jpg";
+import otros from "@/assets/videos/otroscover.jpg";
 
 export type Category = {
   slug: string;
@@ -72,14 +74,14 @@ export const categories: Category[] = [
   {
     slug: "cortometrajes",
     name: "Cortometrajes",
-    cover: editorial,
+    cover: corto,
     description: "Narrativas breves contadas en movimiento.",
     images: makeImages("Cortometrajes"),
   },
   {
     slug: "documentales",
     name: "Otros",
-    cover: bw,
+    cover: otros,
     description: "Un archivo personal en sombra y luz.",
     images: makeImages("documentales"),
   },
